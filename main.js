@@ -48,7 +48,7 @@ function findAverage(){
                 counter++;
                 display = Math.round(0.05 * counter, -2);
                 $("#button").html("CLICK! (" + display + " secs)");
-                if (average < 10) {
+                if (average < 10 && counter > 3*20) {
                     alert("stop clicking now.");
                     clearInterval(interval);
                     stop = 0;
