@@ -10,7 +10,7 @@
 
 
 /* Value Events */
-function gotData1(data){ // value online (void)
+function gotData1(data){ // value highest (void)
   console.log('value highest');
   var dt = data.val();
   highest = dt;
@@ -21,8 +21,8 @@ function errData1(err){ // value (void)
   console.log(err);
 }
 
-function gotData2(data){ // value online (void)
-  console.log('value online');
+function gotData2(data){ // value leaderboard (void)
+  console.log('value leaderboard');
   var listings = selectAll('.fuck');
   for(var i=0; i<listings.length; i++){
     listings[i].remove();

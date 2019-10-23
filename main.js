@@ -121,10 +121,10 @@ function UpdateLeaderboard(){ // Update leaderboard and upload it
   var ref = database.ref('leaderboard')
   var clientDate = new Date();
   var data = {Date: String(clientDate)}
-  console.log(data);
+
   for(i=1; i<=10; i++){
     data['l' + i] = Leaderboard[i];
   }
-  console.log(data);
+
   ref.set(data);
 }
