@@ -1,0 +1,76 @@
+#ptitle {
+    position: relative;
+    top: -15px;
+    font-variant: small-caps;
+    font-weight: 1000;
+    padding: 0.3em;
+    font-size: 1.5em;
+    border-style: outset;
+    border-width: 2px;
+    border-color: darkgray;
+    width: 245px;
+    background-color: lightgray;
+}
+#button, #test {
+    padding: 0.3em;
+    font-size: 1.2em;
+}
+#button {
+    border-style: outset;
+    border-width: 2px;
+    border-color: gray;
+    position: absolute;
+    top: 140px;
+    right: 262.5px;
+}
+#test {
+    position: relative;
+    top: -32.5px;
+    border-style: inset;
+    border-width: 2px;
+    border-color: black;
+    width: 225px;
+    height: 115px;
+    background-color: #FFA500;
+}
+#dline {
+    position: relative;
+    top: -42.5px;
+    padding: 0.5em;
+    font-size: 1em;
+    border-style: outset;
+    border-width: 2px;
+    border-color: darkgray;
+    width: 315px;
+    background-color: lightgray;
+}
+#results {
+    position: relative;
+    top: -52.5px;
+    padding: 0.3em;
+    font-size: 1.1em;
+    border-style: inset;
+    border-width: 2px;
+    border-color: black;
+    width: 375px;
+    height: 80px;
+    background-color: #FFA500;
+}
+#resulttable {
+    position: relative;
+    top: -50px;
+    left: -1.5px;
+    font-variant:small-caps;
+    font-size: 2em;
+    padding: 0.5em;
+}
+body {
+    background-color: #FFC04C;
+}
+#fsbutton {
+    padding: 0.5em;
+    position: absolute;
+    top: 5px;
+    background-color: lightgray;
+    font-size: 0.75em;
+}

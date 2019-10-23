@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<!--
+感謝您觀看這份程式碼
+作品名稱: N/A
+作者: N/A
+聯絡方式
+  Facebook連結: https://www.facebook.com/bruce.chen.372
+  LINE ID: brucechen0
+最後修改日期: N/A
+版本: N/A
+發表於: https://brucechen034020.github.io/
+程式碼尺度
+  N/A
+作者註解:
+  1. 如本網頁有 bug 請用 Facebook(Messenger) 通知 Bruce Chen，謝謝。
+  2. 如有任何建議，請用 Facebook(Messenger) 通知 Bruce Chen，謝謝。
+  -->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <title> Hypertapping Speed Test </title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.9/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.9/addons/p5.dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.9/addons/p5.sound.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <!--<style> body {padding: 0; margin: 0;} </style>-->
+  </head>
+  <body>
+<center>
+    <div id="title">
+        <p id="ptitle">Hypertap Marathon</p>
+    </div>
+    <div id="test">
+        <br>
+        <br>
+        <br>
+    </div>
+    <div id="description">
+        <p id="dline">You will have 0.5 seconds to click on the button.
+            <br>The time will start as soon as you start clicking.
+            <br>It will tell you your average and score at the end.</p>
+    </div>
+    <div id="results">
+        <p id="resulttable">Results will appear here.</p>
+    </div>
+    <button id="button">CLICK! </button>
+</center>
+<div onclick="OpenInNewTab();">
+    <!--<button id="fsbutton">Fullscreen Version</button>-->
+</div>
+<script type="text/javascript">
+    function OpenInNewTab() {
+        var url = "https://jsfiddle.net/Tomzen/hu720awa/32/embedded/result/"
+        var win = window.open(url, '_blank');
+        win.focus();
+    }
+</script>
+  </body>
+</html>
