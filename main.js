@@ -41,6 +41,8 @@ average = 0;
   ref1.on('value', gotData1, errData1);
   ref2.on('value', gotData2, errData2);
 
+  createP('Leaderboard');
+
   ol1 = createElement('ol');
   ol1.parent(document.body);
 
@@ -118,9 +120,11 @@ function UpdateLeaderboard(){ // Update leaderboard and upload it
   // upload
   var ref = database.ref('leaderboard')
   var clientDate = new Date();
-  var data = {Date: clientDate}
+  var data = {Date: String(clientDate)}
+  console.log(data);
   for(i=1; i<=10; i++){
     data['l' + i] = Leaderboard[i];
   }
+  console.log(data);
   ref.set(data);
 }
