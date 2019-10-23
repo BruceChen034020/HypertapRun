@@ -13,7 +13,7 @@
 function gotData1(data){ // value online (void)
   console.log('value highest');
   var dt = data.val();
-  highest = dt.highest
+  highest = dt;
 }
 
 function errData1(err){ // value (void)

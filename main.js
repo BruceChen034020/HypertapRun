@@ -76,9 +76,16 @@ function findAverage(){
                     stop = 0;
                     endscore = score;
                     score = 0;
-                    $("#results").html("You clicked " + endscore + " times, in " + display + " seconds.<br>Start clicking again to retry and get a better score!");
+                    $("#results").html("You clicked " + endscore + " times, in " + display + " seconds.<br>Start clicking again to retry and get a better score!<br>The highest record is " + highest + " clicks.");
                     $("#button").html("CLICK! (0.5 secs)");
                     counter = 0;
+                    if(endscore > highest){
+                      highest = endscore;
+                      alert("congratulations! You broke the world record! The highest record is now " + highest + " clicks.");
+                      var ref = database.ref('highest');
+                      var data = endscore;
+                      ref.set(data);
+                    }
                 }
             }, 50);
         }
