@@ -1,4 +1,5 @@
 var counter = 0;
+var highest = 0;
 
 function setup() {
     score = 0;
@@ -12,7 +13,28 @@ average = 0;
         average = score / 0.5;
         startTimer();
     });
-    createP('Mouse down, left arrow pressed, right arrow pressed, space bar pressed')
+    createP('Mouse down, left arrow pressed, right arrow pressed, space bar pressed');
+
+    // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAjiu4jxyJ2o7s6Dk_257Eu_FpIULm1710",
+    authDomain: "hypertaprun.firebaseapp.com",
+    databaseURL: "https://hypertaprun.firebaseio.com",
+    projectId: "hypertaprun",
+    storageBucket: "hypertaprun.appspot.com",
+    messagingSenderId: "814954839791",
+    appId: "1:814954839791:web:54f6195e33709ecd5d251a",
+    measurementId: "G-LN7CJWK533"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  //firebase.analytics();
+  database = firebase.database();
+
+  /* set ref.on */
+  var ref1 = database.ref('highest');
+
+  ref1.on('value', gotData1, errData1);
 }
 function draw(){
 
@@ -46,7 +68,7 @@ function findAverage(){
 
             var interval = setInterval(function () {
                 counter++;
-                display = Math.round(0.05 * counter, -2);
+                display = Math.round(0.05 * counter * 100) / 100;
                 $("#button").html("CLICK! (" + display + " secs)");
                 if (average < 10 && counter > 3*20) {
                     alert("stop clicking now.");
@@ -56,6 +78,7 @@ function findAverage(){
                     score = 0;
                     $("#results").html("You clicked " + endscore + " times, in " + display + " seconds.<br>Start clicking again to retry and get a better score!");
                     $("#button").html("CLICK! (0.5 secs)");
+                    counter = 0;
                 }
             }, 50);
         }
