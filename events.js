@@ -20,3 +20,32 @@ function errData1(err){ // value (void)
   console.log("Error!");
   console.log(err);
 }
+
+function gotData2(data){ // value online (void)
+  console.log('value online');
+  var listings = selectAll('.fuck');
+  for(var i=0; i<listings.length; i++){
+    listings[i].remove();
+  }
+
+  var dt = data.val();
+
+  if(dt==null){
+    return;
+  }
+
+  for(var i=1; i<=10; i++){
+    Leaderboard[i] = dt['l' + i];
+  }
+
+  for(var i=1; i<=10; i++){
+    var li = createElement('li', Leaderboard[i] + ' clicks');
+    li.class('fuck');
+    li.parent(ol1);
+  }
+}
+
+function errData2(err){ // value (void)
+  console.log("Error!");
+  console.log(err);
+}

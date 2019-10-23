@@ -1,7 +1,10 @@
 var counter = 0;
 var highest = 0;
+var ol1; // leaderboard (ol)
+var Leaderboard = []; // leaderboard (int array)
 
 function setup() {
+
     score = 0;
     stop = 0;
     $("#test").html("Score: " + score + "<br>Average: 0<br>Start whenever you're ready.");
@@ -33,8 +36,15 @@ average = 0;
 
   /* set ref.on */
   var ref1 = database.ref('highest');
+  var ref2 = database.ref('leaderboard');
 
   ref1.on('value', gotData1, errData1);
+  ref2.on('value', gotData2, errData2);
+
+  ol1 = createElement('ol');
+  ol1.parent(document.body);
+
+
 }
 function draw(){
 
@@ -86,7 +96,31 @@ function findAverage(){
                       var data = endscore;
                       ref.set(data);
                     }
+                    UpdateLeaderboard();
                 }
             }, 50);
         }
     }
+
+function UpdateLeaderboard(){ // Update leaderboard and upload it
+  var i;
+  for(i=1; i<=10; i++){
+    if(endscore > Leaderboard[i]){
+      break;
+    }
+  }
+  var j;
+  for(j=10; j>i; j--){
+    Leaderboard[j] = Leaderboard[j-1];
+  }
+  Leaderboard[i] = endscore;
+
+  // upload
+  var ref = database.ref('leaderboard')
+  var clientDate = new Date();
+  var data = {Date: clientDate}
+  for(i=1; i<=10; i++){
+    data['l' + i] = Leaderboard[i];
+  }
+  ref.set(data);
+}
