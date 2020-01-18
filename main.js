@@ -4,7 +4,7 @@ var ol1; // leaderboard (ol)
 var Leaderboard = []; // leaderboard (int array)
 
 function setup() {
-    $('body').on('contextmenu', 'canvas', function(e){ return false; });
+    $('body').on('contextmenu', function(e){ return false; });
     score = 0;
     stop = 0;
     $("#test").html("Score: " + score + "<br>Average: 0<br>Start whenever you're ready.");
@@ -128,4 +128,15 @@ function UpdateLeaderboard(){ // Update leaderboard and upload it
   }
 
   ref.set(data);
+
+  /*
+  for(i=1; i<10; i++){
+      var ref = database.ref('leaderboard/l' + i);
+      var clientDate = new Date();
+      var data = {Ip: ip,
+                  Name: localStorage.getItem('name'),
+                  Score: endscore,
+                  Date: String(clientDate)}
+      ref.set(data);
+  }*/
 }
