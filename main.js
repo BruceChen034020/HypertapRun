@@ -4,7 +4,7 @@ var ol1; // leaderboard (ol)
 var Leaderboard = []; // leaderboard (int array)
 
 function setup() {
-
+    $('body').on('contextmenu', 'canvas', function(e){ return false; });
     score = 0;
     stop = 0;
     $("#test").html("Score: " + score + "<br>Average: 0<br>Start whenever you're ready.");
@@ -51,7 +51,7 @@ average = 0;
 function draw(){
 
 }
-function keyPressed() {
+function keyPressed(e) {
   if (keyCode === LEFT_ARROW) {
     score = score + 1;
     findAverage();
@@ -64,6 +64,7 @@ function keyPressed() {
     score = score + 1;
     findAverage();
     startTimer();
+    e.preventDefault();
   }
 }
 function mouseClicked(){
